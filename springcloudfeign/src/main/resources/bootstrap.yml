@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+spring:
+  application:
+    #必须与git上配置文件名的应用名一致 git上的配置文件名格式【应用名】+【环境名】
+    name: service-feign
+   #指定配置文件环境
+  cloud:
+    config:
+      profile: dev
+      label: master
+      #启动过程中不找自己的配置文件，通过serverconfig找配置文件
+      discovery:
+        enabled: true
+        #读取配置中心
+        service-id: service-config

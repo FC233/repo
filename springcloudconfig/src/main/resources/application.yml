@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+server:
+  port: 8085
+spring:
+  application:
+    name: service-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/FC233/springcloud.git
+          search-paths: service-config
+          #如果项目是私有的，需要配置git远程仓库用户名和密码
+          #username: FC233
+          #password: naocan21
